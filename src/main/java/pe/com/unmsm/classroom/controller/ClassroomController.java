@@ -21,8 +21,14 @@ import com.sun.jersey.api.client.ClientResponse;
 import pe.com.unmsm.classroom.bean.Content;
 import pe.com.unmsm.classroom.bean.Course;
 import pe.com.unmsm.classroom.bean.Curricula;
+import pe.com.unmsm.classroom.bean.Enrollment;
 import pe.com.unmsm.classroom.bean.EnrollmentDetail;
+import pe.com.unmsm.classroom.bean.Lab;
+import pe.com.unmsm.classroom.bean.ProfessionalSchool;
+import pe.com.unmsm.classroom.bean.Role;
+import pe.com.unmsm.classroom.bean.Task;
 import pe.com.unmsm.classroom.bean.User;
+import pe.com.unmsm.classroom.bean.UserRol;
 import pe.com.unmsm.classroom.request.AccesoRequest;
 import pe.com.unmsm.classroom.response.AccesoResponse;
 import pe.com.unmsm.classroom.service.IClassroomService;
@@ -180,5 +186,156 @@ public class ClassroomController {
 	@DeleteMapping("/EnrollmentDetails/{id}")
 	public ResponseEntity<ClientResponse> deleteEnrollmentDetail(@PathVariable Integer id) {
 		return ResponseEntity.ok(service.deleteEnrollmentDetail(id));
+	}
+
+	@GetMapping("/Enrollments")
+	public ResponseEntity<List<Enrollment>> getAllEnrollment() {
+		return ResponseEntity.ok(service.getAllEnrollment());
+	}
+
+	@GetMapping("/Enrollments/{id}")
+	public ResponseEntity<Enrollment> getEnrollment(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.getEnrollment(id));
+	}
+
+	@PostMapping("/Enrollments")
+	public ResponseEntity<Enrollment> postEnrollment(@RequestBody Enrollment request) {
+		return ResponseEntity.ok(service.postEnrollment(request));
+	}
+
+	@PutMapping("/Enrollments/{id}")
+	public ResponseEntity<ClientResponse> putEnrollment(@PathVariable Integer id, @RequestBody Enrollment request) {
+		return ResponseEntity.ok(service.putEnrollment(id, request));
+	}
+
+	@DeleteMapping("/Enrollments/{id}")
+	public ResponseEntity<ClientResponse> deleteEnrollment(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.deleteEnrollment(id));
+	}
+
+	@GetMapping("/Labs")
+	public ResponseEntity<List<Lab>> getAllLab() {
+		return ResponseEntity.ok(service.getAllLab());
+	}
+
+	@GetMapping("/Labs/{id}")
+	public ResponseEntity<Lab> getLab(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.getLab(id));
+	}
+
+	@PostMapping("/Labs")
+	public ResponseEntity<Lab> postLab(@RequestBody Lab request) {
+		return ResponseEntity.ok(service.postLab(request));
+	}
+
+	@PutMapping("/Labs/{id}")
+	public ResponseEntity<ClientResponse> putLab(@PathVariable Integer id, @RequestBody Lab request) {
+		return ResponseEntity.ok(service.putLab(id, request));
+	}
+
+	@DeleteMapping("/Labs/{id}")
+	public ResponseEntity<ClientResponse> deleteLab(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.deleteLab(id));
+	}
+
+	@GetMapping("/ProfessionalSchools")
+	public ResponseEntity<List<ProfessionalSchool>> getAllProfessionalSchool() {
+		return ResponseEntity.ok(service.getAllProfessionalSchool());
+	}
+
+	@GetMapping("/ProfessionalSchools/{id}")
+	public ResponseEntity<ProfessionalSchool> getProfessionalSchool(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.getProfessionalSchool(id));
+	}
+
+	@PostMapping("/ProfessionalSchools")
+	public ResponseEntity<ProfessionalSchool> postProfessionalSchool(@RequestBody ProfessionalSchool request) {
+		return ResponseEntity.ok(service.postProfessionalSchool(request));
+	}
+
+	@PutMapping("/ProfessionalSchools/{id}")
+	public ResponseEntity<ClientResponse> putProfessionalSchool(@PathVariable Integer id,
+			@RequestBody ProfessionalSchool request) {
+		return ResponseEntity.ok(service.putProfessionalSchool(id, request));
+	}
+
+	@DeleteMapping("/ProfessionalSchools/{id}")
+	public ResponseEntity<ClientResponse> deleteProfessionalSchool(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.deleteProfessionalSchool(id));
+	}
+
+	@GetMapping("/Roles")
+	public ResponseEntity<List<Role>> getAllRole() {
+		return ResponseEntity.ok(service.getAllRole());
+	}
+
+	@GetMapping("/Roles/{id}")
+	public ResponseEntity<Role> getRole(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.getRole(id));
+	}
+
+	@PostMapping("/Roles")
+	public ResponseEntity<Role> postRole(@RequestBody Role request) {
+		return ResponseEntity.ok(service.postRole(request));
+	}
+
+	@PutMapping("/Roles/{id}")
+	public ResponseEntity<ClientResponse> putRole(@PathVariable Integer id, @RequestBody Role request) {
+		return ResponseEntity.ok(service.putRole(id, request));
+	}
+
+	@DeleteMapping("/Roles/{id}")
+	public ResponseEntity<ClientResponse> deleteRole(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.deleteRole(id));
+	}
+
+	@GetMapping("/Tareas")
+	public ResponseEntity<List<Task>> getAllTask() {
+		return ResponseEntity.ok(service.getAllTask());
+	}
+
+	@GetMapping("/Tareas/{id}")
+	public ResponseEntity<Task> getTask(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.getTask(id));
+	}
+
+	@PostMapping("/Tareas")
+	public ResponseEntity<Task> postTask(@RequestBody Task request) {
+		return ResponseEntity.ok(service.postTask(request));
+	}
+
+	@PutMapping("/Tareas/{id}")
+	public ResponseEntity<ClientResponse> putTask(@PathVariable Integer id, @RequestBody Task request) {
+		return ResponseEntity.ok(service.putTask(id, request));
+	}
+
+	@DeleteMapping("/Tareas/{id}")
+	public ResponseEntity<ClientResponse> deleteTask(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.deleteTask(id));
+	}
+
+	@GetMapping("/UserRoles")
+	public ResponseEntity<List<UserRol>> getAllUserRol() {
+		return ResponseEntity.ok(service.getAllUserRol());
+	}
+
+	@GetMapping("/UserRoles/{id}")
+	public ResponseEntity<UserRol> getUserRol(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.getUserRol(id));
+	}
+
+	@PostMapping("/UserRoles")
+	public ResponseEntity<UserRol> postUserRol(@RequestBody UserRol request) {
+		return ResponseEntity.ok(service.postUserRol(request));
+	}
+
+	@PutMapping("/UserRoles/{id}")
+	public ResponseEntity<ClientResponse> putUserRol(@PathVariable Integer id, @RequestBody UserRol request) {
+		return ResponseEntity.ok(service.putUserRol(id, request));
+	}
+
+	@DeleteMapping("/UserRoles/{id}")
+	public ResponseEntity<ClientResponse> deleteUserRol(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.deleteUserRol(id));
 	}
 }

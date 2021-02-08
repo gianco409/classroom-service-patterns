@@ -7,8 +7,14 @@ import com.sun.jersey.api.client.ClientResponse;
 import pe.com.unmsm.classroom.bean.Content;
 import pe.com.unmsm.classroom.bean.Course;
 import pe.com.unmsm.classroom.bean.Curricula;
+import pe.com.unmsm.classroom.bean.Enrollment;
 import pe.com.unmsm.classroom.bean.EnrollmentDetail;
+import pe.com.unmsm.classroom.bean.Lab;
+import pe.com.unmsm.classroom.bean.ProfessionalSchool;
+import pe.com.unmsm.classroom.bean.Role;
+import pe.com.unmsm.classroom.bean.Task;
 import pe.com.unmsm.classroom.bean.User;
+import pe.com.unmsm.classroom.bean.UserRol;
 import pe.com.unmsm.classroom.request.AccesoRequest;
 import pe.com.unmsm.classroom.response.AccesoResponse;
 
@@ -70,4 +76,64 @@ public interface IClassroomService {
 	public ClientResponse putEnrollmentDetail(Integer id, EnrollmentDetail request);
 
 	public ClientResponse deleteEnrollmentDetail(Integer id);
+
+	public List<Enrollment> getAllEnrollment();
+
+	public Enrollment getEnrollment(Integer id);
+
+	public Enrollment postEnrollment(Enrollment request);
+
+	public ClientResponse putEnrollment(Integer id, Enrollment request);
+
+	public ClientResponse deleteEnrollment(Integer id);
+
+	public List<Lab> getAllLab();
+
+	public Lab getLab(Integer id);
+
+	public Lab postLab(Lab request);
+
+	public ClientResponse putLab(Integer id, Lab request);
+
+	public ClientResponse deleteLab(Integer id);
+
+	public List<ProfessionalSchool> getAllProfessionalSchool();
+
+	public ProfessionalSchool getProfessionalSchool(Integer id);
+
+	public ProfessionalSchool postProfessionalSchool(ProfessionalSchool request);
+
+	public ClientResponse putProfessionalSchool(Integer id, ProfessionalSchool request);
+
+	public ClientResponse deleteProfessionalSchool(Integer id);
+
+	public List<Role> getAllRole();
+
+	public Role getRole(Integer id);
+
+	public Role postRole(Role request);
+
+	public ClientResponse putRole(Integer id, Role request);
+
+	public ClientResponse deleteRole(Integer id);
+
+	public List<Task> getAllTask();
+
+	public Task getTask(Integer id);
+
+	public Task postTask(Task request);
+
+	public ClientResponse putTask(Integer id, Task request);
+
+	public ClientResponse deleteTask(Integer id);
+
+	public List<UserRol> getAllUserRol();
+
+	public UserRol getUserRol(Integer id);
+
+	public UserRol postUserRol(UserRol request);
+
+	public ClientResponse putUserRol(Integer id, UserRol request);
+
+	public ClientResponse deleteUserRol(Integer id);
 }
