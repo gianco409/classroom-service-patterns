@@ -7,6 +7,7 @@ import com.sun.jersey.api.client.ClientResponse;
 
 import pe.com.unmsm.classroom.bean.User;
 import pe.com.unmsm.classroom.client.EntityUserClient;
+import pe.com.unmsm.classroom.patterns.builder.UserBuilder;
 
 public class EntityUserFacade {
 
@@ -40,8 +41,14 @@ public class EntityUserFacade {
 	public ClientResponse put(Integer id, User request) {
 		EntityUserClient client = new EntityUserClient();
 		ClientResponse response = null;
+		UserBuilder builder = new UserBuilder();
 
-		response = client.put(id, request);
+		User user = builder.withId(request.getIdUser()).withFirstName(request.getFirstName())
+				.withlastName(request.getLastName()).withBirthdate(request.getBirthdate())
+				.withIdProfessionalSchool(request.getIdProfessionalSchool()).withUsername(request.getUsername())
+				.withpassword(request.getPassword()).build();
+
+		response = client.put(id, user);
 
 		return response;
 	}
